@@ -1,0 +1,10 @@
+name: Concurrency
+on: push
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 120
